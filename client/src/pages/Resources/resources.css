@@ -1,0 +1,28 @@
+
+  .resources-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4rem 0;
+  }
+
+  .resources-wrapper a {
+    margin: 1rem;
+    text-align: center;
+    flex: 1;
+    max-width: 120px;
+  }
+
+  .resources-wrapper img {
+    height: auto;
+    min-width: 0;
+    max-width:100%;
+    height: auto;
+  }
+
+  .citations-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }

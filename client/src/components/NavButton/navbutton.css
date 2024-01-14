@@ -1,0 +1,29 @@
+.nav-button {
+    box-sizing: border-box;
+    appearance: none;
+    padding: 0.5rem 2.6rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #b197e6; 
+    color: #fff;
+    outline: none;
+    border-radius: var(--border-radius);
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform 0.25s ease;
+}
+.nav-button svg {
+    position: relative;
+    right: -30px;
+    float: right;
+}
+
+.nav-button:hover {
+    transform: scale(0.99);
+    background-color: #b79cee;
+    color: white;
+    border: 1px solid #d0c2ec;
+
+}

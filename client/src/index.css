@@ -1,0 +1,45 @@
+:root {
+  --primary-header-rgb: 41, 81, 53;
+  --card-rgb: 230, 230, 250;
+  /* --card-rgb: 180, 185, 188; */
+  --card-border-rgb: 147, 112, 216;
+  --border-radius: 12px;
+  --primary-rgb: 0,0,0;
+
+  --Sphagnopsida-color: 184, 64, 126;
+  --Polytrichopsida-color: 177, 204, 22;
+  --Bryopsida-color: 83, 176, 156;
+  --Andreaeopsida-color: 186, 66, 45;
+  --Tetraphidopsida-color: 64, 156, 81;
+
+  --background-rgb: 255, 255, 255;
+  --secondary-header-rgb: 95, 117, 33;
+
+  --box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: default;
+  background-color: rgba(var(--background-rgb), 1);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a {
+  cursor: pointer;
+  /* color: inherit; */
+  /* text-decoration: none; */
+}
+
+p {
+  margin: 0;
+}
