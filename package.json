@@ -4,9 +4,12 @@
   "description": "",
   "type": "module",
   "main": "index.js",
+  "homepage": "https://tesscoleman.github.io/michigan-bryophytes/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node index.js"
+    "server": "node index.js",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -20,5 +23,8 @@
     "mongoose": "^8.0.1",
     "node-fetch": "^3.3.2",
     "react-spinners": "^0.13.8"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }
