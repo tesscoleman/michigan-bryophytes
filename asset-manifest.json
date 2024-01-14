@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/michigan-bryophytes/static/css/main.595354f1.css",
+    "main.js": "/michigan-bryophytes/static/js/main.71b0a343.js",
+    "static/media/FNA-logo.jpg": "/michigan-bryophytes/static/media/FNA-logo.deccdb1cdfe839a8c59f.jpg",
+    "static/media/moss.png": "/michigan-bryophytes/static/media/moss.897e7da7c43157fd80d8.png",
+    "static/media/WorldFloraOnline.png": "/michigan-bryophytes/static/media/WorldFloraOnline.a7b13cf8343741e5a8db.png",
+    "static/media/NatureServe_logo_V.svg.png": "/michigan-bryophytes/static/media/NatureServe_logo_V.svg.9fd0560dfa54d372db07.png",
+    "index.html": "/michigan-bryophytes/index.html",
+    "main.595354f1.css.map": "/michigan-bryophytes/static/css/main.595354f1.css.map",
+    "main.71b0a343.js.map": "/michigan-bryophytes/static/js/main.71b0a343.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.595354f1.css",
+    "static/js/main.71b0a343.js"
+  ]
+}
