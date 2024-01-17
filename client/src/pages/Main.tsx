@@ -86,6 +86,7 @@ export default function Home() {
 
   // Sizing of species page:
   const sizingClass = isCardActive ? "half-display" : "full-display";
+  const backend_url = 'https://michigan-bryophytes-backend-tesscoleman.onrender.com';
 
   useEffect(() => {
     setIsLoading(true);
@@ -100,7 +101,7 @@ export default function Home() {
   const fetchNewPage = async () => {
     try {
       
-      const url = process.env.BACKEND_MOSS_URI + `?page=${page}&sort=${sort.sort},${sort.order}&className=${filterClass}&search=${searchQuery}&occurrenceMin=${occurrenceMin}`;
+      const url = backend_url + `/moss?page=${page}&sort=${sort.sort},${sort.order}&className=${filterClass}&search=${searchQuery}&occurrenceMin=${occurrenceMin}`;
       const response = await axios.get(url);
       // const data = await response.json();
       setCount(response.data.total);
@@ -115,7 +116,7 @@ export default function Home() {
   const fetchData = async () => {
     try {
       // const synonym = includeSynonym ? "all" : "ACCEPTED";
-      const url = process.env.BACKEND_MOSS_URI+ `?page=1&sort=${sort.sort},${sort.order}&className=${filterClass}&search=${searchQuery}&occurrenceMin=${occurrenceMin}`;
+      const url = backend_url + `/moss?page=1&sort=${sort.sort},${sort.order}&className=${filterClass}&search=${searchQuery}&occurrenceMin=${occurrenceMin}`;
       setPage(1);
       const response = await axios.get(url);
       const data = await response.data;
@@ -148,8 +149,8 @@ export default function Home() {
   const fetchOccurrenceData = async (item: Species) => {
     try {
       //TODO: factor in whether synonyms are toggled off:
-      const response = await axios.get( process.env.BACKEND_OCCURRENCE_URI +
-        `?search=${item.scientificName}`
+      const response = await axios.get( backend_url +
+        `/occurrences?search=${item.scientificName}`
       );
       const json = await response.data;
       setSelectedSpeciesOccurrences(json.occurrenceResult as Occurrence[]);
