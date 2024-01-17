@@ -11,6 +11,7 @@ import { DotLoader } from "react-spinners";
 import SearchBar from "../components/SearchBar";
 import Pagination from "../components/Pagination";
 import Sort from "../components/Sort";
+import axios from "axios";
 
 export default function Home() {
   const defaultSpecies: Species = {
@@ -99,11 +100,11 @@ export default function Home() {
   const fetchNewPage = async () => {
     try {
       const url = `/moss?page=${page}&sort=${sort.sort},${sort.order}&className=${filterClass}&search=${searchQuery}&occurrenceMin=${occurrenceMin}`;
-      const response = await fetch(url);
-      const data = await response.json();
-      setCount(data.total);
-      setObj(data);
-      mapSpeciesAPI(data.speciesResult);
+      const response = await axios.get(url);
+      // const data = await response.json();
+      setCount(response.data.total);
+      setObj(response.data);
+      mapSpeciesAPI(response.data.speciesResult);
       setIsLoading(false);
     } catch (error) {
       console.error(error);
@@ -115,8 +116,8 @@ export default function Home() {
       // const synonym = includeSynonym ? "all" : "ACCEPTED";
       const url = `/moss?page=1&sort=${sort.sort},${sort.order}&className=${filterClass}&search=${searchQuery}&occurrenceMin=${occurrenceMin}`;
       setPage(1);
-      const response = await fetch(url);
-      const data = await response.json();
+      const response = await axios.get(url);
+      const data = await response.data;
       setCount(data.total);
       setObj(data);
       mapSpeciesAPI(data.speciesResult);
@@ -146,10 +147,10 @@ export default function Home() {
   const fetchOccurrenceData = async (item: Species) => {
     try {
       //TODO: factor in whether synonyms are toggled off:
-      const response = await fetch(
+      const response = await axios.get(
         `/occurrences?search=${item.scientificName}`
       );
-      const json = await response.json();
+      const json = await response.data;
       setSelectedSpeciesOccurrences(json.occurrenceResult as Occurrence[]);
       console.log(json.occurrenceResult as Occurrence[]);
       return json;
