@@ -142,7 +142,6 @@ export default function Home() {
   };
 
   const handleSort = (sortValue: { sort: string; order: string }) => {
-    console.log(sortValue);
     setSort(sortValue);
   };
 
@@ -154,7 +153,7 @@ export default function Home() {
       );
       const json = await response.data;
       setSelectedSpeciesOccurrences(json.occurrenceResult as Occurrence[]);
-      console.log(json.occurrenceResult as Occurrence[]);
+      // console.log(json.occurrenceResult as Occurrence[]);
       return json;
     } catch (error) {
       console.error(error);
@@ -167,7 +166,7 @@ export default function Home() {
       //fetchConservationStatus(item);
       fetchOccurrenceData(item);
       !isCardActive && setisCardActive(!isCardActive);
-      console.log(item);
+      // console.log(item);
     } catch(error) {
       console.error(error);
     }
@@ -176,7 +175,7 @@ export default function Home() {
   }
 
   const handleSubmit = async (e: any) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     setSearchQuery(e.target.value);
   };
 

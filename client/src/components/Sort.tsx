@@ -15,7 +15,6 @@ const Sort = ({ sort, setSort }: Props) => {
     let value = event.target.value;
     let values = value.split(",");
     setSort({ sort: values[0], order: values[1] });
-    console.log(value);
   }
   return (
     <>
