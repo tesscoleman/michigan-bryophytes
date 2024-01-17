@@ -158,21 +158,6 @@ export default function Home() {
     }
   };
 
-  // const fetchConservationStatus = async (item: Species) => {
-  //   try {
-  //     const response = await fetch(`/conservation/${item.name}`);
-  //     const json = await response.json();
-  //     if (json.results[0]) {
-  //       setSelectedSpeciesConservation(json.results[0].roundedGRank);
-  //     } else {
-  //       setSelectedSpeciesConservation("");
-  //     }
-  //     return json;
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-
   const onClickCard = async (item: Species) => {
     try {
       setSelectedSpecies(item);

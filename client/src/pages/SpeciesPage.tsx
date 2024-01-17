@@ -1,23 +1,12 @@
 import Tab from "../components/Tab";
 import MapCtrl from "../components/MapCtrl";
-import Card from "../components/Card";
 import Species from "../interfaces/Species";
-import {
-  CircleMarker,
-  MapContainer,
-  Marker,
-  Popup,
-  TileLayer,
-  useMap,
-} from "react-leaflet";
+
 import Icon from "@mdi/react";
-import { mdiChevronRight, mdiChevronLeft } from "@mdi/js";
-import { PhotoProvider, PhotoView } from "react-photo-view";
-import { ReactNode, useEffect, useState } from "react";
+import { mdiChevronRight } from "@mdi/js";
+import { useEffect, useState } from "react";
 import Occurrence from "../interfaces/Occurrence";
-import { count } from "console";
 import Classification from "../components/SpeciesPage/Classification";
-import { Route, Routes } from "react-router-dom";
 import Identification from "../components/SpeciesPage/Identification";
 import Map from "../components/SpeciesPage/Map";
 import Characteristics from "../components/SpeciesPage/Characteristics";
