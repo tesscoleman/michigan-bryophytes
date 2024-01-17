@@ -20,7 +20,7 @@ const Sort = ({ sort, setSort }: Props) => {
   return (
     <>
       <div>
-        <p>
+        <span>
           <span>Sort By: </span>
           <div className="select-container">
             <select
@@ -36,7 +36,7 @@ const Sort = ({ sort, setSort }: Props) => {
             </select>
             <Icon path={mdiMenuSwap} size={1} />
           </div>
-        </p>
+        </span>
       </div>
     </>
   );
