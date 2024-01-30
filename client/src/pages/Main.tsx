@@ -86,7 +86,7 @@ export default function Home() {
 
   // Sizing of species page:
   const sizingClass = isCardActive ? "half-display" : "full-display";
-  const backend_url = process.env.BACKEND_URL;
+  const backend_url = process.env.REACT_APP_BACKEND_URL;
 
   useEffect(() => {
     setIsLoading(true);

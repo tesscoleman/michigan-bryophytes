@@ -10,12 +10,14 @@ import nsModel from "./models/nsMIMossModel.js";
 
 const app = express();
 
+const backend_url = process.env.BACKEND_URL;
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use((req, res, next) => { 
   res.setHeader(
     "Access-Control-Allow-Origin",
-    "https://michigan-bryophytes.onrender.com"
+    backend_url
   );
   res.setHeader(
     "Access-Control-Allow-Methods",
