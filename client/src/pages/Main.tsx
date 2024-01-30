@@ -86,7 +86,7 @@ export default function Home() {
 
   // Sizing of species page:
   const sizingClass = isCardActive ? "half-display" : "full-display";
-  const backend_url = 'https://michigan-bryophytes-backend-tesscoleman.onrender.com';
+  const backend_url = process.env.BACKEND_URL;
 
   useEffect(() => {
     setIsLoading(true);
@@ -147,13 +147,11 @@ export default function Home() {
 
   const fetchOccurrenceData = async (item: Species) => {
     try {
-      //TODO: factor in whether synonyms are toggled off:
       const response = await axios.get( backend_url +
         `/occurrences?search=${item.scientificName}`
       );
       const json = await response.data;
       setSelectedSpeciesOccurrences(json.occurrenceResult as Occurrence[]);
-      // console.log(json.occurrenceResult as Occurrence[]);
       return json;
     } catch (error) {
       console.error(error);
@@ -163,10 +161,8 @@ export default function Home() {
   const onClickCard = async (item: Species) => {
     try {
       setSelectedSpecies(item);
-      //fetchConservationStatus(item);
       fetchOccurrenceData(item);
       !isCardActive && setisCardActive(!isCardActive);
-      // console.log(item);
     } catch(error) {
       console.error(error);
     }
@@ -175,7 +171,6 @@ export default function Home() {
   }
 
   const handleSubmit = async (e: any) => {
-    // console.log(e.target.value);
     setSearchQuery(e.target.value);
   };
 
@@ -281,7 +276,6 @@ export default function Home() {
               />
             )}
           </div>
-          {/* <div className="footer"></div> */}
         </main>
       </main>
     </>
