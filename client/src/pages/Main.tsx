@@ -28,7 +28,7 @@ export default function Home() {
     taxonomicStatus: "species",
     habitat: [{}],
     appearance: [{}],
-    roundedGRank: ""
+    roundedGRank: "",
   };
 
   const classes = [
@@ -100,8 +100,9 @@ export default function Home() {
 
   const fetchNewPage = async () => {
     try {
-      
-      const url = backend_url + `/moss?page=${page}&sort=${sort.sort},${sort.order}&className=${filterClass}&search=${searchQuery}&occurrenceMin=${occurrenceMin}`;
+      const url =
+        backend_url +
+        `/moss?page=${page}&sort=${sort.sort},${sort.order}&className=${filterClass}&search=${searchQuery}&occurrenceMin=${occurrenceMin}`;
       const response = await axios.get(url);
       // const data = await response.json();
       setCount(response.data.total);
@@ -116,7 +117,9 @@ export default function Home() {
   const fetchData = async () => {
     try {
       // const synonym = includeSynonym ? "all" : "ACCEPTED";
-      const url = backend_url + `/moss?page=1&sort=${sort.sort},${sort.order}&className=${filterClass}&search=${searchQuery}&occurrenceMin=${occurrenceMin}`;
+      const url =
+        backend_url +
+        `/moss?page=1&sort=${sort.sort},${sort.order}&className=${filterClass}&search=${searchQuery}&occurrenceMin=${occurrenceMin}`;
       setPage(1);
       const response = await axios.get(url);
       const data = await response.data;
@@ -147,8 +150,8 @@ export default function Home() {
 
   const fetchOccurrenceData = async (item: Species) => {
     try {
-      const response = await axios.get( backend_url +
-        `/occurrences?search=${item.scientificName}`
+      const response = await axios.get(
+        backend_url + `/occurrences?search=${item.scientificName}`
       );
       const json = await response.data;
       setSelectedSpeciesOccurrences(json.occurrenceResult as Occurrence[]);
@@ -163,12 +166,10 @@ export default function Home() {
       setSelectedSpecies(item);
       fetchOccurrenceData(item);
       !isCardActive && setisCardActive(!isCardActive);
-    } catch(error) {
+    } catch (error) {
       console.error(error);
     }
-
-
-  }
+  };
 
   const handleSubmit = async (e: any) => {
     setSearchQuery(e.target.value);
@@ -188,9 +189,11 @@ export default function Home() {
         occurrences: item.occurrenceCount ? item.occurrenceCount : 0,
         habitat: item.habitat,
         appearance: item.appearance,
-        thumbnail: item.images.some((e) => e.thumbnail) ? item.images.find((e) => e.thumbnail) : item.images[0] || "",
+        thumbnail: item.images.some((e) => e.thumbnail)
+          ? item.images.find((e) => e.thumbnail)
+          : item.images[0] || "",
         images: item.images,
-        roundedGRank: item.roundedGRank
+        roundedGRank: item.roundedGRank,
       };
     });
     setSpecies(array);
@@ -250,11 +253,13 @@ export default function Home() {
               </div>
             </div>
 
-            <Grid>
-              {isLoading ? (
+            {isLoading ? (
+              <div className="dot-loader">
                 <DotLoader color="rgb(var(--primary-header-rgb), 0.8)"></DotLoader>
-              ) : (
-                species?.map((item) => (
+              </div>
+            ) : (
+              <Grid>
+                {species?.map((item) => (
                   <Card
                     onClick={() => {
                       onClickCard(item);
@@ -264,9 +269,10 @@ export default function Home() {
                     classification={item}
                     count={item.occurrences || 0}
                   />
-                ))
-              )}
-            </Grid>
+                ))}
+              </Grid>
+            )}
+
             {!isLoading && (
               <Pagination
                 page={page}

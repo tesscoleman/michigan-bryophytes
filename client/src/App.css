@@ -454,6 +454,12 @@ figcaption:empty {
   margin: 1rem;
 }
 
+.dot-loader {
+  display: table;
+  position: relative;
+  margin: 2rem auto;
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
