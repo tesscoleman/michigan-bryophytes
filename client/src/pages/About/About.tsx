@@ -36,7 +36,7 @@ export default function About() {
             If you have any questions, or would like to reach out, please feel
             free to contact me!:
           </p>
-          <p>Email:</p>
+          <p>Email: tesscoleman123@gmail.com</p>
         </div>
       </div>
     </>
