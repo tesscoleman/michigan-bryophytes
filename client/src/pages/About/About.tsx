@@ -10,8 +10,8 @@ export default function About() {
       >
         <div
           className="about-wrapper"
-          style={{ position: "relative", width: "50%" }}
         >
+          <div className="about">
           <h1>Welcome!</h1>
           <p>
             This website was made to provide a collection of information of the
@@ -29,6 +29,8 @@ export default function About() {
           <div className="about-button-wrapper">
             <NavButton text="Resources" route="Resources" />
           </div>
+          </div>
+
         </div>
         <div className="contact-wrapper">
           <h1>Contact</h1>

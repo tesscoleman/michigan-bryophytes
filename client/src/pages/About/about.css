@@ -1,31 +1,54 @@
 .about-page {
+    overflow: auto;
     position: relative;
+    z-index: 1;
+    padding-top: var(--header-height);
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 90vh;
+    height: 100vh;
+    /* padding: 5rem; */
     justify-content: space-between;
     align-items: center
 }
 
 .about-wrapper {
-    flex: 2;
-    margin: 5rem 2rem 0.5rem 2rem;
+    text-align: center;
+    flex: 3;
+    padding: 3rem 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .about-wrapper p {
-    margin: 1rem 0;
+    margin: 2rem 0;
+}
+
+.about-wrapper a {
+    color: var(--link-hex);
+    text-decoration: none;
+}
+
+.about-wrapper .about {
+    width: 70%;
+    margin: 0 auto;
 }
 
 .about-button-wrapper {
+    margin: 3rem;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2rem;
 }
 
 .contact-wrapper {
+    border-top: 2px dotted #000;
+    width: 100%;
     flex: 1;
-    margin: 4rem;
+    padding: 4rem;
     text-align: center;
+    bottom: 0;
 }

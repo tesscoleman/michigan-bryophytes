@@ -11,10 +11,17 @@ body {
   margin: 0;
 }
 
+.main-page {
+  overflow: auto;
+  position: relative;
+  z-index: 1;
+  padding-top: var(--header-height);
+}
+
 .species-main-page {
   padding: 2rem;
-  overflow-y: auto;
-  max-height: 90vh;
+  overflow-y: hidden;
+  /* max-height: 90vh; */
   float: right;
 }
 .full-display {
@@ -26,9 +33,12 @@ body {
 }
 
 .topnav {
-  position: sticky;
+  position: fixed;
+  z-index: 20;
+  right: 0;
   top: 0;
-  min-height: 5vh;
+  left: 0;
+  height: var(--header-height);
   background-color: rgba(var(--primary-header-rgb), 1);
   overflow: hidden;
   padding: 15px;
@@ -353,7 +363,6 @@ figcaption:empty {
 }
 
 .pagination-container {
-  padding: 1.8rem 0 0 0;
   position: relative;
   text-align: center;
   bottom: 0;
@@ -364,7 +373,7 @@ figcaption:empty {
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
-  margin-bottom: auto;
+  margin-top: 1.6rem;
   z-index: 1;
 }
 

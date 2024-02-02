@@ -16,6 +16,10 @@
   --secondary-header-rgb: 95, 117, 33;
 
   --box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px;
+
+  --header-height: 51px;
+
+  --link-hex: #b197e6;
 }
 
 body {
