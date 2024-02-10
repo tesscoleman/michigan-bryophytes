@@ -197,6 +197,7 @@ body {
   height: 100px;
   width: 100px;
   object-fit: cover;
+  cursor: pointer;
   /* object-fit: contain; */
 }
 .image-caption {
@@ -204,12 +205,12 @@ body {
   padding: 10px 0;
 }
 .img-gallery {
-  text-align: center;
+  /* text-align: center; */
   overflow-y: auto;
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(0, 1fr));
 }
 figure {
   display: flex;
