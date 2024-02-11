@@ -300,6 +300,10 @@ figcaption:empty {
   top: 0;
   position: relative;
   padding: 0 0 2rem 0;
+  display: flex;
+  align-items:start;
+  justify-content: space-between;
+  flex-wrap:wrap-reverse;
 }
 .filters-div {
   display: inline-block;

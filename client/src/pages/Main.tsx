@@ -217,7 +217,7 @@ export default function Home() {
           <div className="contents">
             <div className="top-bar">
               <div className="filters-div">
-                <SpeciesCounter count={count} />
+
                 <FilterBox
                   onClick={() => {
                     setFilterClass("");
@@ -251,6 +251,7 @@ export default function Home() {
                   />
                 </div>
               </div>
+              <SpeciesCounter count={count} />
             </div>
 
             {isLoading ? (
