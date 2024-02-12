@@ -214,45 +214,48 @@ export default function Home() {
           </div>
         )}
         <main className={sizingClass + " species-main-page"}>
-          <div className="contents">
-            <div className="top-bar">
-              <div className="filters-div">
 
-                <FilterBox
-                  onClick={() => {
-                    setFilterClass("");
-                    setPage(1);
-                  }}
-                  currentClasses={filterClass}
-                  name="All"
-                />
-
-                {classes.map((className) => (
+        <div className="top-wrapper">
+              <div className="top-flex">
+                <div className="filters-div">
                   <FilterBox
-                    key={className}
+                    onClick={() => {
+                      setFilterClass("");
+                      setPage(1);
+                    }}
                     currentClasses={filterClass}
-                    onClick={() => handleFilterClick(className)}
-                    name={className}
+                    name="All"
                   />
-                ))}
-                <SearchBar
-                  searchQuery={searchQuery}
-                  handleSubmit={handleSubmit}
-                />
-                <div className="sort-div">
-                  <Sort sort={sort} setSort={handleSort} />
-                  <label>Include Zero Occurrence</label>
-                  <input
-                    type="checkbox"
-                    checked={occurrenceMin === 0}
-                    onChange={() =>
-                      setOccurrenceMin(occurrenceMin === 0 ? 1 : 0)
-                    }
+
+                  {classes.map((className) => (
+                    <FilterBox
+                      key={className}
+                      currentClasses={filterClass}
+                      onClick={() => handleFilterClick(className)}
+                      name={className}
+                    />
+                  ))}
+                  <SearchBar
+                    searchQuery={searchQuery}
+                    handleSubmit={handleSubmit}
                   />
+                  <div className="sort-div">
+                    <Sort sort={sort} setSort={handleSort} />
+                    <label>Include Zero Occurrence</label>
+                    <input
+                      type="checkbox"
+                      checked={occurrenceMin === 0}
+                      onChange={() =>
+                        setOccurrenceMin(occurrenceMin === 0 ? 1 : 0)
+                      }
+                    />
+                  </div>
                 </div>
+                <SpeciesCounter count={count} />
               </div>
-              <SpeciesCounter count={count} />
             </div>
+          <div className="contents">
+
 
             {isLoading ? (
               <div className="dot-loader">

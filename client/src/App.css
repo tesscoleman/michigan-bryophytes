@@ -19,7 +19,7 @@ body {
 }
 
 .species-main-page {
-  padding: 2rem;
+
   overflow-y: hidden;
   /* max-height: 90vh; */
   float: right;
@@ -54,7 +54,6 @@ body {
 }
 
 .grid {
-  /* margin: 40px; */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   grid-gap: 20px;
@@ -151,11 +150,12 @@ body {
 
 /* SPECIES PAGE */
 .species-page-container {
-  padding: 2.5rem 1rem;
+  padding: 2rem 1rem;
   position: fixed;
   width: 35%;
   float: left;
   height: 90vh;
+  margin: auto;
 }
 .species-page {
   overflow: auto;
@@ -295,15 +295,27 @@ figcaption:empty {
   cursor: default;
 }
 
-.contents .top-bar {
-  z-index: 1;
-  top: 0;
+.contents {
   position: relative;
-  padding: 0 0 2rem 0;
+  height: 100%;
+  padding: 1rem;
+}
+.top-wrapper {
+  z-index: 20;
+  width: 100%;
+  top: 0;
+  background-color: #fff;
+  padding: 2rem 1rem 1rem;
+
+}
+.top-flex {
+  width: 100%;
+  z-index: 20;
   display: flex;
   align-items:start;
   justify-content: space-between;
-  flex-wrap:wrap-reverse;
+  flex-wrap:wrap;
+  background-color: #fff;
 }
 .filters-div {
   display: inline-block;
@@ -344,6 +356,11 @@ figcaption:empty {
 .nav-btn {
   background: none;
   border: none;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
 }
 
 .card-info {
