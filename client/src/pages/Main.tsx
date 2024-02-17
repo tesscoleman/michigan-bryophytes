@@ -1,9 +1,9 @@
-import Grid from "../components/Grid";
-import Card from "../components/Card";
+import Grid from "../components/SpeciesGrid/Grid";
+import Card from "../components/SpeciesCard/Card";
 import FilterBox from "../components/FilterBox";
 import SpeciesCounter from "../components/SpeciesCounter";
 import { useEffect, useState } from "react";
-import SpeciesPage from "./SpeciesPage";
+import SpeciesPage from "./SpeciesInfoPage/SpeciesPage";
 import SpeciesAPI from "../interfaces/SpeciesAPI";
 import Species from "../interfaces/Species";
 import Occurrence from "../interfaces/Occurrence";
@@ -203,7 +203,7 @@ export default function Home() {
     <>
       <main className="main-page">
         {isCardActive && (
-          <div className="species-page-container">
+          <div className="species-info-container">
             <SpeciesPage
               occurrences={selectedSpeciesOccurrences}
               conservation={selectedSpecies.roundedGRank}

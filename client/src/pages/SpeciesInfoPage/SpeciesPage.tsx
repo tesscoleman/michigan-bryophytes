@@ -1,15 +1,17 @@
-import Tab from "../components/Tab";
-import MapCtrl from "../components/MapCtrl";
-import Species from "../interfaces/Species";
+import "./speciesinfopage.css"
+
+import Tab from "../../components/Tab";
+import MapCtrl from "../../components/MapCtrl";
+import Species from "../../interfaces/Species";
 
 import Icon from "@mdi/react";
 import { mdiChevronRight } from "@mdi/js";
 import { useEffect, useState } from "react";
-import Occurrence from "../interfaces/Occurrence";
-import Classification from "../components/SpeciesPage/Classification";
-import Identification from "../components/SpeciesPage/Identification";
-import Map from "../components/SpeciesPage/Map";
-import Characteristics from "../components/SpeciesPage/Characteristics";
+import Occurrence from "../../interfaces/Occurrence";
+import Classification from "../../components/SpeciesPage/Classification";
+import Identification from "../../components/SpeciesPage/Identification";
+import Map from "../../components/SpeciesPage/Map";
+import Characteristics from "../../components/SpeciesPage/Characteristics";
 
 interface Props {
   isCardActive: boolean;
@@ -64,7 +66,7 @@ export default function SpeciesPage({
 
   return (
     <>
-      <div className="species-header">
+      <div className="species-navbar">
         <Tab
           isActive={tab === "Classification"}
           onClick={() => setTab("Classification")}
@@ -90,7 +92,7 @@ export default function SpeciesPage({
           <Icon path={mdiChevronRight} size={1} />
         </MapCtrl>
       </div>
-      <div className="species-page">
+      <div className="info-section">
         <span style={{position:"absolute", left:"2rem", top: "2rem"}}>
           {conservation
             ? conservation + " (" + statusDisplays[conservation] + ")"

@@ -1,3 +1,4 @@
+import "./grid.css"
 import { ReactNode } from "react";
 
 interface Props {

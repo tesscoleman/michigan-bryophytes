@@ -1,6 +1,7 @@
-import Species from "../interfaces/Species";
-import SpeciesItem from "./SpeciesItem";
-import mossIcon from "../assets/moss.png";
+import "./card.css"
+import Species from "../../interfaces/Species";
+import SpeciesItem from "../SpeciesItem";
+import mossIcon from "../../assets/moss.png";
 
 interface Props {
   id?: number;

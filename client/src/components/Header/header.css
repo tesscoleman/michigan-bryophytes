@@ -1,0 +1,22 @@
+.topnav {
+    position: fixed;
+    z-index: 20;
+    right: 0;
+    top: 0;
+    left: 0;
+    height: var(--header-height);
+    background-color: rgba(var(--primary-header-rgb), 1);
+    overflow: hidden;
+    padding: 15px;
+  }
+  .topnav .search-container {
+    float: right;
+  }
+  
+  .topnav a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .topnav-heading {
+    color: #fff;
+  }
