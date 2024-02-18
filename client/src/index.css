@@ -1,10 +1,20 @@
 :root {
-  --primary-header-rgb: 41, 81, 53;
+  --color-green-1: 41, 81, 53;
+  --color-green-2: 62, 80, 34;
+  --color-green-3: 95, 117, 33;
+  --color-black-1: 0,0,0;
+  --color-white-1: 255,255,255;
+  --color-white-2: 241,245,237;
+  --color-white-3: 203,218,188;
+  --color-white-4: 62, 80, 34;
+
+  --color-purple-1: #b197e6;
+  --color-blue-1: 62, 80, 34;
+
   --card-rgb: 230, 230, 250;
-  /* --card-rgb: 180, 185, 188; */
   --card-border-rgb: 147, 112, 216;
+
   --border-radius: 12px;
-  --primary-rgb: 0,0,0;
 
   --Sphagnopsida-color: 184, 64, 126;
   --Polytrichopsida-color: 177, 204, 22;
@@ -12,14 +22,11 @@
   --Andreaeopsida-color: 186, 66, 45;
   --Tetraphidopsida-color: 64, 156, 81;
 
-  --background-rgb: 255, 255, 255;
-  --secondary-header-rgb: 95, 117, 33;
-
   --box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px;
 
   --header-height: 51px;
 
-  --link-hex: #b197e6;
+
 }
 
 body {
@@ -30,7 +37,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   cursor: default;
-  background-color: rgba(var(--background-rgb), 1);
+  background-color: rgba(var(--color-white-1), 1);
 }
 
 code {

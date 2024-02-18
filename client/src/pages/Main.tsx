@@ -259,7 +259,7 @@ export default function Home() {
 
             {isLoading ? (
               <div className="dot-loader">
-                <DotLoader color="rgb(var(--primary-header-rgb), 0.8)"></DotLoader>
+                <DotLoader color="rgb(var(--color-green-1), 0.8)"></DotLoader>
               </div>
             ) : (
               <Grid>

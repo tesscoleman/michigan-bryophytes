@@ -7,9 +7,10 @@
     flex-direction: column;
     width: 100%;
     height: 100vh;
-    /* padding: 5rem; */
+    padding: 5rem;
     justify-content: space-between;
-    align-items: center
+    align-items: center;
+    color: rgb(var(--color-black-1));
 }
 
 .about-wrapper {
@@ -27,8 +28,9 @@
 }
 
 .about-wrapper a {
-    color: var(--link-hex);
+    color: var(--color-purple-1);
     text-decoration: none;
+    font-weight: 600;
 }
 
 .about-wrapper .about {

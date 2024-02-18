@@ -2,7 +2,7 @@
     width: 600px;
     background-color: #f2f0f5;
     border-radius: 4px;
-    border-left: 8px solid black;
+    border-left: 8px solid rgb(var(--color-green-1));
     overflow: auto;
 }
 

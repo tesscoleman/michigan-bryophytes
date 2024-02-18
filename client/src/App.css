@@ -22,6 +22,7 @@ body {
 .species-main-page {
   overflow-y: hidden;
   float: right;
+  color: rgb(var(--color-black-1))
 }
 .full-display {
   width: 100%;
@@ -60,7 +61,7 @@ body {
   z-index: 20;
   width: 100%;
   top: 0;
-  background-color: #fff;
+  background-color: var(--color-white-1);
   padding: 2rem 1rem 1rem;
 }
 .top-flex {
@@ -69,8 +70,7 @@ body {
   display: flex;
   align-items: start;
   justify-content: space-between;
-  flex-wrap: wrap;
-  background-color: #fff;
+  flex-wrap: wrap-reverse;
 }
 .filters-div {
   display: inline-block;
@@ -128,9 +128,8 @@ body {
   height: 30px;
   font-family: "EB Garamond", serif;
   border-width: 1px;
-  border-style: double;
+  border-style: solid;
   border-color: rgba(var(--card-border-rgb), 0.3);
-  outline-color: rgba(var(--card-border-rgb), 0.3);
   font-size: 1rem;
   border-image: none;
 }
@@ -148,6 +147,7 @@ body {
   flex-wrap: wrap;
   margin-top: 1.6rem;
   z-index: 1;
+
 }
 
 .page-btn {
@@ -163,23 +163,23 @@ body {
   justify-content: center;
   box-shadow: var(--box-shadow);
   cursor: pointer;
-  background-color: white;
+  background-color: rgb(var(--color-white-1));
+  color: rgb(var(--color-black-1));
 }
 
 .page-btn:hover {
-  background-color: rgba(200, 215, 225, 0.5);
+  background-color: rgba(var(--color-white-2), 1);
 }
 
 .active.page-btn {
-  background-color: rgba(var(--primary-header-rgb), 1);
-  color: white;
+  background-color: rgba(var(--color-green-1), 1);
+  color: rgb(var(--color-white-1));
 }
 .page-btn.chevron {
   box-shadow: none;
   padding: 0;
   width: 20px;
 }
-
 
 
 /* .moss-footer {
@@ -199,6 +199,7 @@ body {
   width: 100%;
 } */
 
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
@@ -211,16 +212,16 @@ body {
   }
 
   .tab:not(.active):hover {
-    background: rgba(var(--secondary-header-rgb), 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: rgba(var(--color-white-3), 1);
+    /* background: #CBDABC; */
+    border: 1px solid rgba(var(--color-black-1), 0.2);
     border-bottom: none;
   }
 
   .nav-btn:hover {
-    background: rgba(var(--primary-header-rgb), 0.1);
+    background: rgba(var(--color-green-1), 0.1);
   }
   .filter:hover {
-    background-color: black;
     box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 4px;
     border: 1px solid rgba(var(--card-border-rgb), 0.3);
   }
