@@ -170,8 +170,3 @@
   .characteristic-container svg {
     margin: 1rem;
   }
-  .dot-loader {
-    display: table;
-    position: relative;
-    margin: 2rem auto;
-  }

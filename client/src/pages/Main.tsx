@@ -214,52 +214,53 @@ export default function Home() {
           </div>
         )}
         <main className={sizingClass + " species-main-page"}>
+          <div className="top-wrapper">
+            <div className="top-flex">
+              <div className="filters-div">
+                <FilterBox
+                  onClick={() => {
+                    setFilterClass("");
+                    setPage(1);
+                  }}
+                  currentClasses={filterClass}
+                  name="All"
+                />
 
-        <div className="top-wrapper">
-              <div className="top-flex">
-                <div className="filters-div">
+                {classes.map((className) => (
                   <FilterBox
-                    onClick={() => {
-                      setFilterClass("");
-                      setPage(1);
-                    }}
+                    key={className}
                     currentClasses={filterClass}
-                    name="All"
+                    onClick={() => handleFilterClick(className)}
+                    name={className}
                   />
-
-                  {classes.map((className) => (
-                    <FilterBox
-                      key={className}
-                      currentClasses={filterClass}
-                      onClick={() => handleFilterClick(className)}
-                      name={className}
-                    />
-                  ))}
-                  <SearchBar
-                    searchQuery={searchQuery}
-                    handleSubmit={handleSubmit}
+                ))}
+                <SearchBar
+                  searchQuery={searchQuery}
+                  handleSubmit={handleSubmit}
+                />
+                <div className="sort-div">
+                  <Sort sort={sort} setSort={handleSort} />
+                  <label>Include Zero Occurrence</label>
+                  <input
+                    type="checkbox"
+                    checked={occurrenceMin === 0}
+                    onChange={() =>
+                      setOccurrenceMin(occurrenceMin === 0 ? 1 : 0)
+                    }
                   />
-                  <div className="sort-div">
-                    <Sort sort={sort} setSort={handleSort} />
-                    <label>Include Zero Occurrence</label>
-                    <input
-                      type="checkbox"
-                      checked={occurrenceMin === 0}
-                      onChange={() =>
-                        setOccurrenceMin(occurrenceMin === 0 ? 1 : 0)
-                      }
-                    />
-                  </div>
                 </div>
-                <SpeciesCounter count={count} />
               </div>
+              <SpeciesCounter count={count} />
             </div>
+          </div>
           <div className="contents">
-
-
             {isLoading ? (
               <div className="dot-loader">
                 <DotLoader color="rgb(var(--color-green-1), 0.8)"></DotLoader>
+                <div className="dot-loader-container">
+                  <p className="fade-in" style={{ fontSize: "2rem" }}>Server connecting :)</p>
+                  <p className="dot-loader-text fade-in">Please wait one moment</p>
+                </div>
               </div>
             ) : (
               <Grid>
