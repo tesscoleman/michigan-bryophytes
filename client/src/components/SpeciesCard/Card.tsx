@@ -25,11 +25,9 @@ export default function Card({
   return (
     <>
       <a
-        href="#"
         onClick={onClick}
         className="card"
-        // target="_blank"
-        // rel="noopener noreferrer"
+        role="button"
       >
         <div
           title={classification.className}
@@ -59,7 +57,7 @@ export default function Card({
           <h2>
             <span>{name ? name : classification.genus + " (Genus)"} -&gt;</span>
           </h2>
-          <SpeciesItem classification={classification} count={count} />
+          <SpeciesItem classification={classification} count={count} key={classification.scientificName}/>
         </div>
       </a>
     </>

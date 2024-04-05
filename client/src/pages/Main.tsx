@@ -269,7 +269,7 @@ export default function Home() {
                     onClick={() => {
                       onClickCard(item);
                     }}
-                    key={item.taxonKey}
+                    key={item.scientificName}
                     name={item.name}
                     classification={item}
                     count={item.occurrences || 0}
