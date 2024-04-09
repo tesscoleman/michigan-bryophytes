@@ -8,6 +8,7 @@ import EOL from "../../assets/images/resources/EOL-logo.png";
 import NatureServe from "../../assets/images/resources/NatureServe_logo_V.svg.png";
 import FNA from "../../assets/images/resources/FNA-logo.jpg";
 import GBIF from "../../assets/images/resources/GBIF-2015-full-stacked.png";
+import Footer from "../../components/Footer/footer";
 
 const Resources = () => {
   return (
@@ -86,6 +87,7 @@ const Resources = () => {
           </Collapsible>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

@@ -6,8 +6,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
-    padding: 5rem;
+    padding: 5rem 6rem 1rem;
     justify-content: space-between;
     align-items: center;
     color: rgb(var(--color-black-1));
@@ -16,11 +15,16 @@
 .about-wrapper {
     text-align: center;
     flex: 3;
-    padding: 3rem 2rem;
+    padding: 2rem;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid #21108156;
+    border-radius: 12px;
+    background-color: #5836b415;
+    margin: 2rem;
+    box-shadow: #4949492d 0px 2px 8px 0px;
 }
 
 .about-wrapper p {

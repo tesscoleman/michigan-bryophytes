@@ -12,6 +12,7 @@ import SearchBar from "../components/SearchBar";
 import Pagination from "../components/Pagination";
 import Sort from "../components/Sort";
 import axios from "axios";
+import Footer from "../components/Footer/footer";
 
 export default function Home() {
   const defaultSpecies: Species = {
@@ -248,13 +249,12 @@ export default function Home() {
                 </div>
               </div>
               <div className="search-flex">
-              <SearchBar
+                <SearchBar
                   searchQuery={searchQuery}
                   handleSubmit={handleSubmit}
                 />
                 <SpeciesCounter count={count} />
               </div>
-
             </div>
           </div>
           <div className="contents">
@@ -262,8 +262,12 @@ export default function Home() {
               <div className="dot-loader">
                 <DotLoader color="rgb(var(--color-green-1), 0.8)"></DotLoader>
                 <div className="dot-loader-container">
-                  <p className="fade-in" style={{ fontSize: "2rem" }}>Server connecting :)</p>
-                  <p className="dot-loader-text fade-in">Please wait one moment</p>
+                  <p className="fade-in" style={{ fontSize: "2rem" }}>
+                    Server connecting :)
+                  </p>
+                  <p className="dot-loader-text fade-in">
+                    Please wait one moment
+                  </p>
                 </div>
               </div>
             ) : (
@@ -291,8 +295,11 @@ export default function Home() {
               />
             )}
           </div>
+
         </main>
+
       </main>
+      <Footer />
     </>
   );
 }

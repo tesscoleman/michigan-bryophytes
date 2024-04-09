@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import About from "./pages/About/About";
 import MossFooter from "./components/MossFooter";
 import Resources from "./pages/Resources/Resources";
+import Footer from "./components/Footer/footer";
 
 function App() {
 
@@ -18,7 +19,6 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/resources" element={<Resources />}/>
       </Routes>
-      {/* <MossFooter></MossFooter> */}
     </div>
   );
 }

@@ -1,7 +1,8 @@
 .resources-page {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 80vh;
+
   color: rgb(var(--color-black-1));
 
 }
