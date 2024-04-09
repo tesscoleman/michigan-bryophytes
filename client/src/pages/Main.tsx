@@ -234,10 +234,7 @@ export default function Home() {
                     name={className}
                   />
                 ))}
-                <SearchBar
-                  searchQuery={searchQuery}
-                  handleSubmit={handleSubmit}
-                />
+
                 <div className="sort-div">
                   <Sort sort={sort} setSort={handleSort} />
                   <label>Include Zero Occurrence</label>
@@ -250,7 +247,14 @@ export default function Home() {
                   />
                 </div>
               </div>
-              <SpeciesCounter count={count} />
+              <div className="search-flex">
+              <SearchBar
+                  searchQuery={searchQuery}
+                  handleSubmit={handleSubmit}
+                />
+                <SpeciesCounter count={count} />
+              </div>
+
             </div>
           </div>
           <div className="contents">

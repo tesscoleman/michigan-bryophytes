@@ -55,7 +55,7 @@ body {
 .contents {
   position: relative;
   height: 100%;
-  padding: 1rem;
+  padding: 1rem 2rem;
 }
 .top-wrapper {
   z-index: 20;
@@ -120,7 +120,13 @@ body {
 
 .search-bar {
   display: inline;
-  padding: 20px;
+  padding: 0.6rem;
+}
+
+.search-flex {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: center;
 }
 
 .moss-search {
