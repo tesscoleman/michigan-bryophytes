@@ -79,6 +79,7 @@ body {
   margin: 0.2rem;
   vertical-align: middle;
   display: inline-block;
+  padding: 0 1.2rem;
 }
 
 .sort-select {

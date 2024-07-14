@@ -176,6 +176,10 @@ export default function Home() {
     setSearchQuery(e.target.value);
   };
 
+  function handleSendClass(data : string) {
+    setFilterClass(data);
+  }
+
   function mapSpeciesAPI(data: []) {
     const array = data.map((item: SpeciesAPI) => {
       return {
@@ -211,6 +215,7 @@ export default function Home() {
               isCardActive={isCardActive}
               classification={selectedSpecies}
               onClick={() => setisCardActive(!isCardActive)}
+              sendClassToMain={handleSendClass}
             />
           </div>
         )}

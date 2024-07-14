@@ -19,6 +19,7 @@ interface Props {
   onClick: () => void;
   occurrences: Occurrence[];
   conservation: string;
+  sendClassToMain : any;
 }
 
 export default function SpeciesPage({
@@ -27,11 +28,12 @@ export default function SpeciesPage({
   onClick,
   occurrences,
   conservation,
+  sendClassToMain
 }: Props) {
   const [tab, setTab] = useState<
     "Classification" | "Identification" | "Map" | "Characteristics"
-  >("Classification");
-  const [images, setImages] = useState(classification.images!);
+  >("Classification"); // The selected and active tab
+  const [images, setImages] = useState(classification.images!); // Images from the database
 
   useEffect(() => {
     setImages(classification.images!);
@@ -41,7 +43,7 @@ export default function SpeciesPage({
   const attribution = classification.thumbnail?.credit;
   const counts: Record<string, number> = {};
   const classColor =
-    "rgba(var(--" + classification.className + "-color, #fff), 0.8)";
+    "rgba(var(--" + classification.className + "-color, #fff), 0.8)"; // Class color var from filters
   occurrences.forEach((item) => {
     const coordinate: [number, number] = [
       item.decimalLatitude,
@@ -50,6 +52,11 @@ export default function SpeciesPage({
     const cstr: string = coordinate.join(",");
     counts[cstr] = (counts[cstr] || 0) + 1;
   });
+
+  function handleClassClick() {
+    sendClassToMain(classification.className)
+
+  }
 
   const statusDisplays: Record<string, string> = {
     GX: "Presumed Extinct",
@@ -88,6 +95,7 @@ export default function SpeciesPage({
         >
           Identification
         </Tab>
+        {/* MAP CONTROL CONTROLS ALL OF SPECIES PAGE */}
         <MapCtrl mapActive={isCardActive} onClick={onClick}>
           <Icon path={mdiChevronRight} size={1} />
         </MapCtrl>
@@ -108,7 +116,9 @@ export default function SpeciesPage({
             right: "3rem",
             top: "3rem",
             borderRadius: "5px",
+            zIndex: "20"
           }}
+          onClick={() => handleClassClick()}
         ></div>
         <div className="header-div-row">
           <div className="header-div">
