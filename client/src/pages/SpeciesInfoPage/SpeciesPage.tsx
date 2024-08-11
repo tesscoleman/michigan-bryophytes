@@ -23,6 +23,15 @@ interface Props {
   sendClassToMain: any;
 }
 
+// Species Page detailing clasification, map, characteristics and idenficiation of a specific species to the user!
+//
+// isCardActive: bool - Whether the user has clicked a specific species and the info card is available
+// classification: Species - Classification of object Species detailing information about the species being described.
+// onClick: () => void - OnClick event handler, used by the dismiss button which cancels the whole info page sidebar.
+// occurrences: Occurrence[] - Array of moss occurrences used by the Map tab.
+// conservation: string - Nature Serve Global Conservation Status Rank of the species.
+// sendClassToMain: any - function called onClassClick, when the user has filtered the query by the class of the Species type.
+
 export default function SpeciesPage({
   isCardActive,
   classification,
@@ -35,7 +44,7 @@ export default function SpeciesPage({
     "Classification" | "Identification" | "Map" | "Characteristics"
   >("Classification"); // The selected and active tab
   const [images, setImages] = useState(classification.images!); // Images from the database
-  const [displayImg, setDisplayImg] = useState(true);
+  const [displayImg, setDisplayImg] = useState(true); // Whether to display the thumbnail image at the top
 
   useEffect(() => {
     setImages(classification.images!);
@@ -57,6 +66,7 @@ export default function SpeciesPage({
   });
 
   function handleClassClick() {
+    // Send class name to main so that filtering by class (after clicking the label top right) is possible.
     sendClassToMain(classification.className);
   }
 
