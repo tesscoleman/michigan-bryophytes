@@ -1,175 +1,183 @@
 /* SPECIES INFO PAGE */
 .species-info-container {
-    padding: 2rem 1rem;
-    position: fixed;
-    width: 35%;
-    float: left;
-    height: 90vh;
-    margin: auto;
-  }
-  .info-section {
-    overflow: auto;
-    max-height: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    color: rgb(var(--color-green-2));
-    background-color: rgb(var(--color-white-2), 0.5);
-    border-radius: 0 var(--border-radius) var(--border-radius) var(--border-radius);
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  }
-  .header-div-row {
-    padding: 1.2rem 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .header-div {
-    overflow: hidden;
-    position: relative;
-    height: 18%;
-    width: 100%;
-    /* box-shadow: inset 0 0 0 1000px rgba(var(--card-rgb),.5); */
-    text-align: center;
-  }
-  .species-content {
-    white-space: nowrap;
-    font-size: 1.1rem;
-  }
-  
-  .info-section .content-row {
-      padding: 0 2rem 1.4rem 2rem;
-  }
-  
-  .header-div .header-image {
-    border-radius: var(--border-radius);
-    height: 100px;
-    width: 100px;
-    object-fit: cover;
-    cursor: pointer;
-    /* object-fit: contain; */
-  }
+  padding: 2rem 1rem;
+  position: fixed;
+  width: 35%;
+  float: left;
+  height: 90vh;
+  margin: auto;
+}
+.info-section {
+  overflow: auto;
+  max-height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: rgb(var(--color-green-2));
+  background-color: rgb(var(--color-white-2), 0.5);
+  border-radius: 0 var(--border-radius) var(--border-radius)
+    var(--border-radius);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.classLabel {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 3rem;
+  top: 3rem;
+  border-radius: 5px;
+  z-index: 20;
+  cursor: pointer;
+}
+.header-div-row {
+  padding: 1.2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header-div {
+  overflow: hidden;
+  position: relative;
+  height: 18%;
+  width: 100%;
+  /* box-shadow: inset 0 0 0 1000px rgba(var(--card-rgb),.5); */
+  text-align: center;
+}
+.species-content {
+  white-space: nowrap;
+  font-size: 1.1rem;
+}
 
+.info-section .content-row {
+  padding: 0 2rem 1.4rem 2rem;
+}
 
-  .image-caption {
-    text-align: center;
-    padding: 10px 0;
-  }
-  .img-gallery {
-    /* text-align: center; */
-    overflow-y: auto;
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(0, 1fr));
-  }
-  figure {
-    display: flex;
-    flex-flow: column;
-    width: 100%;
-    max-height: 100%;
-    margin: auto;
-  }
-  figure figcaption {
-    background-color: #222;
-    color: #fff;
-    font: italic smaller sans-serif;
-    padding: 3px;
-    text-align: center;
-    margin: 0;
-  }
-  figure a {
-    color: pink;
-  }
-  figcaption:empty {
-    display: none;
-  }
+.header-div .header-image {
+  border-radius: var(--border-radius);
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  cursor: pointer;
+  /* object-fit: contain; */
+}
 
-  .map-container {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .leaflet-container {
-    height: 380px; 
-    width: 500px;
-    bottom: 0;
-  }
+.image-caption {
+  text-align: center;
+  padding: 10px 0;
+}
+.img-gallery {
+  /* text-align: center; */
+  overflow-y: auto;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(0, 1fr));
+}
+figure {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  max-height: 100%;
+  margin: auto;
+}
+figure figcaption {
+  background-color: #222;
+  color: #fff;
+  font: italic smaller sans-serif;
+  padding: 3px;
+  text-align: center;
+  margin: 0;
+}
+figure a {
+  color: pink;
+}
+figcaption:empty {
+  display: none;
+}
 
-  
+.map-container {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.leaflet-container {
+  height: 380px;
+  width: 500px;
+  bottom: 0;
+}
 
 .species-navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    max-height: 40px;
-    white-space: nowrap;
-  }
-  .species-navbar a {
-    font-size: 1rem;
-  }
-  .tab {
-    flex: 1;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    color: rgb(var(--color-black-1));
-    display: inline-block;
-    font-size: 1.2rem;
-    padding: 0.5rem 0.1rem;
-    border-radius: var(--border-radius) var(--border-radius) 0 0;
-    background: rgb(var(--card-rgb));
-    /* background: rgba(var(--secondary-header-rgb), 0.2); */
-    /* background: rgba(var(--color-green-2),0.1); */
-    border: 1px solid rgba(var(--color-black-1), 0.15);
-    border-bottom: none;
-    transition: background 200ms, border 200ms;
-  }
-  .tab.active {
-    background-color: rgb(var(--color-white-2), 0.5);
-    z-index: 20;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-height: 40px;
+  white-space: nowrap;
+}
+.species-navbar a {
+  font-size: 1rem;
+}
+.tab {
+  flex: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: rgb(var(--color-black-1));
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 0.5rem 0.1rem;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  background: rgb(var(--card-rgb));
+  /* background: rgba(var(--secondary-header-rgb), 0.2); */
+  /* background: rgba(var(--color-green-2),0.1); */
+  border: 1px solid rgba(var(--color-black-1), 0.15);
+  border-bottom: none;
+  transition: background 200ms, border 200ms;
+}
+.tab.active {
+  background-color: rgb(var(--color-white-2), 0.5);
+  z-index: 20;
+}
 
-  .taxonomy-list {
-    padding-left: 0;
-  }
-  .taxonomy {
-    width: 100%;
-    /* text-align: center; */
-    position: relative;
-    padding-left: 20%;
-  }
-  .taxonomy::before {
-    content: "";
-    width: 20%;
-    border-bottom: solid 1px #000;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    z-index: 1;
-  }
-  .taxonomy p {
-    z-index: 3;
-    padding: 0 20px 0 20px;
-    position: relative;
-    margin: 0;
-  }
-  .characteristics-flexbox {
-    display: flex;
-    flex-direction: column;
-  }
-  .characteristic-container {
-    min-height: 70px;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-  }
-  .characteristic-container svg {
-    margin: 1rem;
-  }
-  .characteristic-desc {
-    width: 100%;
-  }
+.taxonomy-list {
+  padding-left: 0;
+}
+.taxonomy {
+  width: 100%;
+  /* text-align: center; */
+  position: relative;
+  padding-left: 20%;
+}
+.taxonomy::before {
+  content: "";
+  width: 20%;
+  border-bottom: solid 1px #000;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 1;
+}
+.taxonomy p {
+  z-index: 3;
+  padding: 0 20px 0 20px;
+  position: relative;
+  margin: 0;
+}
+.characteristics-flexbox {
+  display: flex;
+  flex-direction: column;
+}
+.characteristic-container {
+  min-height: 70px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.characteristic-container svg {
+  margin: 1rem;
+}
+.characteristic-desc {
+  width: 100%;
+}

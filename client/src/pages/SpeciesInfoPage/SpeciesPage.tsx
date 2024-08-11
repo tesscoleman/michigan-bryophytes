@@ -110,15 +110,10 @@ export default function SpeciesPage({
         </span>
         <div
           title={classification.className}
+          className="classLabel"
           style={{
             backgroundColor: classColor,
-            width: "20px",
-            height: "20px",
-            position: "absolute",
-            right: "3rem",
-            top: "3rem",
-            borderRadius: "5px",
-            zIndex: "20",
+
           }}
           onClick={() => handleClassClick()}
         ></div>
