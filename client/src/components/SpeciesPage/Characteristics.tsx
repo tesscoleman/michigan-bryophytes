@@ -20,8 +20,8 @@ const Characteristics = ({ habitat, appearance }: Props) => {
             item.description && (
               <div className="characteristic-container">
                 <Icon path={mdiForestOutline} size={1} />
-                <p>
-                  <b>Habitat:</b> {item.description || ""}
+                <p className="characteristic-desc" >
+                  <b>Habitat:</b>{" "}{item.description || ""}
                 </p>
               </div>
             )
@@ -31,7 +31,7 @@ const Characteristics = ({ habitat, appearance }: Props) => {
             item.description && (
               <div className="characteristic-container">
                 <Icon path={mdiLeafCircle} size={1} />
-                <p>
+                <p className="characteristic-desc">
                   <b>Appearance: </b> {item.description || ""}
                   {/* <b>Appearance:</b> Scattered shoots, bright green color, pinnate
         branching. Usually encountered dry */}

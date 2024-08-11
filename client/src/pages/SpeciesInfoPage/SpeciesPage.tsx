@@ -1,4 +1,4 @@
-import "./speciesinfopage.css"
+import "./speciesinfopage.css";
 
 import Tab from "../../components/Tab";
 import MapCtrl from "../../components/MapCtrl";
@@ -12,6 +12,7 @@ import Classification from "../../components/SpeciesPage/Classification";
 import Identification from "../../components/SpeciesPage/Identification";
 import Map from "../../components/SpeciesPage/Map";
 import Characteristics from "../../components/SpeciesPage/Characteristics";
+import mossIcon from "../../assets/moss.png";
 
 interface Props {
   isCardActive: boolean;
@@ -19,7 +20,7 @@ interface Props {
   onClick: () => void;
   occurrences: Occurrence[];
   conservation: string;
-  sendClassToMain : any;
+  sendClassToMain: any;
 }
 
 export default function SpeciesPage({
@@ -28,15 +29,17 @@ export default function SpeciesPage({
   onClick,
   occurrences,
   conservation,
-  sendClassToMain
+  sendClassToMain,
 }: Props) {
   const [tab, setTab] = useState<
     "Classification" | "Identification" | "Map" | "Characteristics"
   >("Classification"); // The selected and active tab
   const [images, setImages] = useState(classification.images!); // Images from the database
+  const [displayImg, setDisplayImg] = useState(true);
 
   useEffect(() => {
     setImages(classification.images!);
+    setDisplayImg(true);
   }, [classification]);
 
   //let images : {source?: string, credit?: any}[] = classification.images!
@@ -54,8 +57,7 @@ export default function SpeciesPage({
   });
 
   function handleClassClick() {
-    sendClassToMain(classification.className)
-
+    sendClassToMain(classification.className);
   }
 
   const statusDisplays: Record<string, string> = {
@@ -101,7 +103,7 @@ export default function SpeciesPage({
         </MapCtrl>
       </div>
       <div className="info-section">
-        <span style={{position:"absolute", left:"2rem", top: "2rem"}}>
+        <span style={{ position: "absolute", left: "2rem", top: "2rem" }}>
           {conservation
             ? conservation + " (" + statusDisplays[conservation] + ")"
             : ""}
@@ -116,18 +118,36 @@ export default function SpeciesPage({
             right: "3rem",
             top: "3rem",
             borderRadius: "5px",
-            zIndex: "20"
+            zIndex: "20",
           }}
           onClick={() => handleClassClick()}
         ></div>
         <div className="header-div-row">
           <div className="header-div">
-            <img
-              className="header-image"
-              src={classification.thumbnail?.source}
-              alt=""
-              onClick={() => setTab("Identification")}
-            />
+            {displayImg && (
+              <img
+                className="header-image"
+                src={classification.thumbnail?.source}
+                alt=""
+                onError={({ currentTarget }) => {
+                  currentTarget.onerror = null;
+                  setDisplayImg(false);
+                }}
+                onClick={() => setTab("Identification")}
+              />
+            )}
+            {!displayImg && (
+              <div className="thumbnail"
+                style={{
+                  width: "100px",
+                  height: "100px",
+                  borderRadius: "var(--border-radius)",
+                  margin: "0 auto",
+                }}
+              >
+                <img src={mossIcon} className="thumbnail-no-img"></img>
+              </div>
+            )}
             <div className="species-content">
               <p>
                 <b>{classification.scientificName}</b>

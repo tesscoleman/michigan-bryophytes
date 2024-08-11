@@ -170,3 +170,6 @@
   .characteristic-container svg {
     margin: 1rem;
   }
+  .characteristic-desc {
+    width: 100%;
+  }
