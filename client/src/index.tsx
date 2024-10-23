@@ -5,6 +5,7 @@ import App from "./App";
 import { HashRouter as Router} from "react-router-dom";
 import 'react-photo-view/dist/react-photo-view.css';
 
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );

@@ -5,6 +5,8 @@
   "private": true,
   "homepage": "./",
   "dependencies": {
+    "@arcgis/core": "^4.30.9",
+    "@arcgis/map-components-react": "^4.30.7",
     "@mdi/js": "^7.4.47",
     "@mdi/react": "^1.6.1",
     "@testing-library/jest-dom": "^5.17.0",

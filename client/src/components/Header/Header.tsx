@@ -6,7 +6,7 @@ export default function Header() {
     <>
       <div className="topnav">
         <p className="topnav-heading" >
-          <NavLink to="/">Moss</NavLink> | <NavLink to="/about">About</NavLink>  | <NavLink to="/resources">Resources</NavLink>
+          <NavLink to="/">Moss</NavLink> | <NavLink to="/about">About</NavLink>  | <NavLink to="/resources">Resources</NavLink> | <NavLink to="/map">Map</NavLink>
         </p>
         {/* <div className="search-container">
           <form id="search-form">

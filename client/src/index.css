@@ -1,3 +1,5 @@
+@import "@arcgis/core/assets/esri/themes/light/main.css";
+
 :root {
   --color-green-1: 41, 81, 53;
   --color-green-2: 62, 80, 34;

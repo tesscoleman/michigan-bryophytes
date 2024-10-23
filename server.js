@@ -8,17 +8,16 @@ import speciesModel from "./models/speciesModel.js";
 import gbifModel from "./models/gbifModel.js";
 import nsModel from "./models/nsMIMossModel.js";
 
+import { fetchGbifOccurrences } from "./gbifService.js";
+
 const app = express();
 
 const backend_url = process.env.BACKEND_URL;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use((req, res, next) => { 
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    backend_url
-  );
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", backend_url);
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS,CONNECT,TRACE"
@@ -38,7 +37,6 @@ const port = process.env.Port || 5000;
 app.listen(port, () => {
   console.log(`Listening on port ${port}`); // Log when listen success
 });
-
 
 // GET ALL MOSS FROM DATABASE
 app.get("/moss", async (req, res) => {
@@ -82,20 +80,23 @@ app.get("/moss", async (req, res) => {
     } else {
       sortBy[sort[0]] = 1;
     }
-    
+
     const speciesResult = await speciesModel
-      .find({ scientificName: { $regex: search, $options: "i" }, occurrenceCount: { $gte: occurrenceMin } })
+      .find({
+        scientificName: { $regex: search, $options: "i" },
+        occurrenceCount: { $gte: occurrenceMin },
+      })
       .where("speciesGlobal.taxclass")
       .in([...className])
       .sort(sortBy)
-      .sort({scientificName: 1})
+      .sort({ scientificName: 1 })
       .skip(page * limit)
       .limit(limit);
 
     const total = await speciesModel.countDocuments({
       "speciesGlobal.taxclass": { $in: [...className] },
       scientificName: { $regex: search, $options: "i" },
-      occurrenceCount: { $gte : occurrenceMin }
+      occurrenceCount: { $gte: occurrenceMin },
     });
 
     const response = {
@@ -105,7 +106,7 @@ app.get("/moss", async (req, res) => {
       limit,
       classOptions: classes,
       speciesResult,
-      sortBy
+      sortBy,
     };
 
     // const species = await gbifModel
@@ -131,8 +132,9 @@ app.get("/moss/class/:name", async (req, res) => {
   }
 });
 
+//GET OCCURRENCES FROM DATABASE BY ID
+//NOT IN USE - USING GBIF API FOR OCCURRENCES
 
-// GET OCCURENCES FROM DATABASE BY ID
 app.get("/occurrences", async (req, res) => {
   try {
     const filter = {};
@@ -157,6 +159,23 @@ app.get("/occurrences", async (req, res) => {
   }
 });
 
+// app.get("/occurrences", async (req, res) => {
+//   try {
+//     const filter = {};
+//     if (req.query.search) {
+//       filter.species = req.query.search;
+//     }
+//     const occurrenceResult = await occurenceModel
+//       .find(filter)
+//       .sort({ species: 1 });
+//     const data = await fetchGbifOccurrences(0, []);
+//     res.json(data);
+//   } catch (error) {
+//     res
+//       .status(500)
+//       .json({ error: "Failed to fetch moss occurrences from GBIF API" });
+//   }
+// });
 
 // GET CONSERVATION STATUS FROM NATURESERVE.ORG REST API
 app.get("/conservation/:species", async (req, res) => {

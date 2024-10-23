@@ -84,6 +84,11 @@ const Resources = () => {
                 "GBIF.org (20 December 2023) GBIF Occurrence Download https://doi.org/10.15468/dl.c7srye"
               }
             </p>
+            <p>
+              {
+                "GBIF.org (03 October 2024) GBIF Occurrence Download  https://doi.org/10.15468/dl.8hbpey"
+              }
+            </p>
           </Collapsible>
         </div>
       </div>
